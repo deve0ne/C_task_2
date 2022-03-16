@@ -13,12 +13,12 @@ double calculateNum(int n) {
 int main() {
     double answer = 2 * log(2);
     double calculatedNum = 0;
-    double currNum = 1; //1 для того, чтобы прошла первая проверка в for
+    double currNum = calculateNum(1);
 
-    for (int i = 1; currNum > pow(10, -10); ++i) {
-        currNum = calculateNum(i);
-
+    for (int i = 2; currNum > pow(10, -10); ++i) {
         calculatedNum += currNum;
+
+        currNum = calculateNum(i);
     }
 
     cout << "Correct answer is: " << answer << endl;
